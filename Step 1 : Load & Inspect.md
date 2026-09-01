@@ -48,6 +48,7 @@ FROM
 Finding : Duplicate rows as there are more rows as unique record ID's.
 	   	  22 Duplicates to Resolve.
 
+
 ```sql
 /*Selecting distinct Resolved values*/
 SELECT
