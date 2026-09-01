@@ -46,4 +46,19 @@ FROM
 <img width="612" height="155" alt="RS12" src="https://github.com/user-attachments/assets/b6e9231e-8e75-414e-901a-29e33f54b2d2" />
 
 Finding : Duplicate rows as there are more rows as unique record ID's.
+	   	  22 Duplicates to Resolve.
+
+```sql
+/*Selecting distinct Resolved values*/
+SELECT
+	DISTINCT(resolved)
+FROM
+	equipment_failures_raw
+;
+```
+<img width="612" height="167" alt="RS13" src="https://github.com/user-attachments/assets/4c29cf45-dc77-4aeb-9ce4-bc8c04e2e376" />
+
+Finding : There is a mismatch in the categorical values of whether or not a incident was resolved or not.
+		  To clean this clean this data to be simply yes or no.
+
 
