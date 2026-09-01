@@ -1,4 +1,6 @@
-# **Goal** : 
+# Step 1 : Load & Inspect
+
+## Goal
 
 ## Get the raw CSV into MySQL untouched, and establish a baseline understanding of its size and quality issues before touching any cleaning logic.
 
