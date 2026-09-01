@@ -1,16 +1,16 @@
-**Equipment Failure & Root Cause Analysis — Project Log**
+# **Equipment Failure & Root Cause Analysis — Project Log**
 
 Author: Lohan Cornelius <br/>
 Tools: MySQL → Power BI <br/>
 Dataset: equipment_failure_data.csv (422 rows, simulated print-press failure records)
 
-**Project Overview**
+## **Project Overview**
 
 This project mirrors real diagnostic work on print-press equipment, applying structured data analysis tooling (SQL, dashboarding) to a messy, realistic failure-log dataset. The dataset was intentionally seeded with common real-world data quality issues: inconsistent text casing/spacing, mixed date formats, missing values, invalid negative numbers, and inconsistent boolean encodings.
 
 The goal is to take this raw, messy log all the way through to a working root-cause dashboard and a set of actionable findings, the same journey real machine-failure data takes on the shop floor, just with proper tooling behind it instead of a spreadsheet.
 
-**Workflow**
+## **Workflow**
 1.  Load and inspect - Import the raw CSV into MySQL untouched, and run baseline checks to understand exactly how messy the data is (row counts, duplicates, distinct     values in inconsistent columns) before deciding how to clean it.
 2.  Clean with SQL, Standardize text fields (casing, whitespace, mapping to a clean lookup of real part names), normalize the resolved column into a true boolean,        flag and correct invalid negative values, parse the mixed date formats into a single consistent format, and de-duplicate records.
 3.  Analyze with SQL - Query the cleaned data to answer the real business questions: which machine has the highest downtime, which parts fail most often, average         cost per failure type, seasonal patterns, and which root causes are most linked to preventable failures.
@@ -20,7 +20,7 @@ The goal is to take this raw, messy log all the way through to a working root-ca
 
 
 
-**Step 1: Load and Inspect**
+### **Step 1: Load and Inspect**
 
 Goal :
 Get the raw CSV into MySQL untouched, and establish a baseline understanding of its size and quality issues before touching any cleaning logic.
