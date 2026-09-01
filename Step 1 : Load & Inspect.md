@@ -1,4 +1,4 @@
-**Goal** : Get the raw CSV into MySQL untouched, and establish a baseline understanding of its size and quality issues before touching any cleaning logic.
+#**Goal** : Get the raw CSV into MySQL untouched, and establish a baseline understanding of its size and quality issues before touching any cleaning logic.
 
 **What I did**
 1.  Created a database and a raw staging table.
