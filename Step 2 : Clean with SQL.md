@@ -90,7 +90,8 @@ ORDER BY record_id;
 <img width="1185" height="322" alt="RS60" src="https://github.com/user-attachments/assets/a7c7d253-823b-4454-967b-92b29721ea44" />
 
 Clear that the reason for the duplicates are due to a mismatch in the downtime_hours column.
-<br/>
+
+
 We have 3 options :
   1. Take the Higher Value
   2. Take the Lower Value
