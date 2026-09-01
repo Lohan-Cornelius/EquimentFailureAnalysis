@@ -10,4 +10,19 @@ Walkthrough
 1.  Created a database and a RAW staging Table.
  -  Note : Every column is a text/VARCHAR at this stage on purpose, casting to proper numeric/date types in Step 2 to avoid import silently failing.
  -  Code : 
-    
+
+				CREATE DATABASE equipment_failures;
+				USE equipment_failures;
+
+				CREATE TABLE equipment_failures_raw (
+    			record_id           VARCHAR(20),
+   			 machine_id          VARCHAR(20),
+   			 part_affected        VARCHAR(100),
+   			 failure_type         VARCHAR(100),
+   			 date_reported         VARCHAR(20),
+  			  downtime_hours        VARCHAR(20),
+    			estimated_cost_zar     VARCHAR(20),
+    			technician           VARCHAR(100),
+   			 root_cause           VARCHAR(200),
+   			 resolved             VARCHAR(10)
+				);
