@@ -13,7 +13,7 @@ Walkthrough
 
 ```sql
 CREATE DATABASE equipment_failures;
-USE equipment_failures;
+ USE equipment_failures;
 
 CREATE TABLE equipment_failures_raw (
     record_id           VARCHAR(20),
