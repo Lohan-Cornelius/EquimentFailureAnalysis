@@ -18,7 +18,7 @@ The goal is to take this raw, messy log all the way through to a working root-ca
 
 **Step 1: Load and Inspect**
 
-Goal
+Goal :
 Get the raw CSV into MySQL untouched, and establish a baseline understanding of its size and quality issues before touching any cleaning logic.
 
 What I did
