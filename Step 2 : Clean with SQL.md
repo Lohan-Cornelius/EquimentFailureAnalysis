@@ -107,6 +107,30 @@ choice, since underestimating downtime risks masking the true cost and urgency o
 accurate reading.
 
 
+```sql
+SET SQL_SAFE_UPDATES = 0;
+
+/* Step 1: Create a deduplicated table, collapsing exact duplicate rows */
+CREATE TABLE equipment_failures_dedup_none AS
+SELECT DISTINCT *
+FROM equipment_failures_raw;
+
+/* Step 2: Resolve the remaining 6 record_ids with conflicting downtime_hours */
+/* Decision: keep the higher value (see reasoning in project log) */
+DELETE t1
+FROM equipment_failures_dedup t1
+JOIN equipment_failures_dedup t2
+    ON t1.record_id = t2.record_id
+    AND t1.downtime_hours < t2.downtime_hours;
+
+/* Step 3: Verify — should return 400 */
+SELECT COUNT(*) AS total_rows
+FROM equipment_failures_dedup;
+```
+<img width="662" height="92" alt="RS58" src="https://github.com/user-attachments/assets/9b41712e-b3ad-4cd9-826e-bb8d80a9a3cc" />
+Clear that duplicates has been removes, can move to step 2.
+
+
 
 
 ## 2. Standardized resolved into a clean boolean/num.
