@@ -58,6 +58,23 @@ ORDER BY record_id;
 
 Clear that Duplicate Rows are pure duplicates as the Value (True & False) query above has the same 1's & 0's across all duplicate rows. Would not matter which duplicate you delete, the data will not lose integrity.
 
+```sql
+CREATE TABLE equipment_failures_dedup AS
+SELECT DISTINCT *
+FROM equipment_failures_raw;
+```
+
+Created New Table with Distinct Rows from the first table.
+```sql
+SELECT COUNT(*) AS total_rows
+FROM equipment_failures_dedup;
+```
+<img width="737" height="311" alt="RS56" src="https://github.com/user-attachments/assets/404c7cd7-7d2e-4909-8a71-024dc4501e93" />
+
+Clear that my initial conclusion that all are exact duplicates was incorrect as there are 6 lines being seen as unique, irrespective of their record_id's matching.
+This means that the mismatch is within the values of other columns.
+
+
 
 
 ## 2. Standardized resolved into a clean boolean/num.
