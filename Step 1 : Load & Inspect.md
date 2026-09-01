@@ -79,4 +79,5 @@ ORDER BY
 ```
 <img width="627" height="542" alt="RS14" src="https://github.com/user-attachments/assets/9e22f4f4-047b-45ed-a2a5-efb58e59a40a" />
 
-Finding : Clear data mismatch, multiple entries of the same part with differenet
+Finding : Clear data mismatch, multiple entries of the same part with different spelling and errors.
+		  To normalize this data.
