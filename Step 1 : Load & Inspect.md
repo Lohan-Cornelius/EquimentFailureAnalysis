@@ -40,6 +40,7 @@ CREATE TABLE equipment_failures_raw (
    
 
 ### 3. Ran baseline checks (Row Count, Duplicate ID's, distinct values in Messy Columns.
+### Evaluate Duplicate Entries
 ```sql
 /*To evaluate if there are any duplicate entries*/
 SELECT 
@@ -54,7 +55,7 @@ FROM
 Finding : Duplicate rows as there are more rows as unique record ID's.
 	   	  22 Duplicates to Resolve.
 
-
+### Checking Resolved Values
 ```sql
 /*Selecting distinct Resolved values*/
 SELECT
@@ -69,7 +70,7 @@ Finding : There is a mismatch in the categorical values of whether or not a inci
 		  To clean this data to be simply yes or no.
 		  6 variants for what should be a 2 value field.
 
-
+### Checking Parts Column
 ```sql
 /*Selecting all distinct parts affected*/
 SELECT
@@ -86,6 +87,7 @@ Finding : Clear data mismatch, multiple entries of the same part with different 
 		  To normalize this data.
 		  32 Distinct spelling for what should be 10 unique parts in total.
 
+### Checking NULL Values Across Table
 ```sql
 /*Checking NULL values in all Columns*/
 SELECT 
@@ -107,6 +109,7 @@ FROM
 Findings : Checking Null values count across all columns.
 		   To fix this in step 2.
 
+### Checking Date Column Format
 ```sql
 /*Checking date column for mismatches*/
 SELECT 
@@ -119,6 +122,7 @@ FROM
 Findings : Clear Date Format Mismatch.
 		   To fix in Step 2.
 
+### Checking for Negative Values Where Not Possible
 ```sql
 /*Checking for negative values across downtime and cost columns*/
 SELECT 
