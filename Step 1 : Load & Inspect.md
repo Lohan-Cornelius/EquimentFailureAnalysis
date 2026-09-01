@@ -67,3 +67,16 @@ Finding : There is a mismatch in the categorical values of whether or not a inci
 		  To clean this data to be simply yes or no.
 
 
+```sql
+/*Selecting all distinct parts affected*/
+SELECT
+	DISTINCT(part_affected)
+FROM 
+	equipment_failures_raw
+ORDER BY
+	1
+;
+```
+<img width="627" height="542" alt="RS14" src="https://github.com/user-attachments/assets/9e22f4f4-047b-45ed-a2a5-efb58e59a40a" />
+
+Finding : Clear data mismatch, multiple entries of the same part with differenet
