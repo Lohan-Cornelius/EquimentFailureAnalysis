@@ -134,6 +134,7 @@ FROM
 ;
 ```
 <img width="695" height="95" alt="RS43" src="https://github.com/user-attachments/assets/f84c0f91-7211-4445-8a1d-52a992d35fb4" />
+
 Findings : Clear indication of data captured incorrectly, impossible to have negative downtime with this data.
 		   To fix in Step 2.
 
