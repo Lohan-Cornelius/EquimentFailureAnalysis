@@ -7,7 +7,7 @@
 ## **What I did**
 
   1. De-duplicated records, keeping the most complete row per duplicate group.
-  2. Standardized resolved into a clean boolean/num.
+  2. Standardized resolved into a clean boolean.
   3. Normalized part_affected spellings to a lookup table of real part names.
   4. Parsed date_reported from mixed formats into a single DATE type.
   5. Corrected/flagged negative downtime_hours and estimated_cost_zar values.
@@ -135,7 +135,28 @@ Clear that duplicates has been removes, can move to step 2.
 
 
 
-## 2. Standardized resolved into a clean boolean/num.
+## 2. Standardized resolved into a clean boolean.
 ```sql
-
+ALTER TABLE equipment_failures_dedup
+ADD COLUMN resolved_clean BOOLEAN;
 ```
+<img width="1296" height="266" alt="RS63" src="https://github.com/user-attachments/assets/4373eb3d-d995-42cf-91ba-c5643ebf2cdf" />
+
+
+Added Column for Boolean interpretation of whether the incident was resolved or not.
+
+```sql
+UPDATE equipment_failures_dedup
+SET resolved_clean = CASE
+    WHEN resolved IN ('Yes', 'yes', 'Y') THEN TRUE
+    WHEN resolved IN ('No', 'N') THEN FALSE
+    ELSE NULL
+END;
+```
+<img width="1305" height="477" alt="RS64" src="https://github.com/user-attachments/assets/0e2a345e-aee2-47ab-b023-578588699da4" />
+
+Updated new column to accurately portray whether is was resolved or not.
+
+
+
+
