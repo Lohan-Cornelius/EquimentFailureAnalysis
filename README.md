@@ -1,7 +1,7 @@
 **Equipment Failure & Root Cause Analysis — Project Log**
 
-Author: Lohan Cornelius 
-Tools: MySQL → Power BI 
+Author: Lohan Cornelius <br/>
+Tools: MySQL → Power BI <br/>
 Dataset: equipment_failure_data.csv (422 rows, simulated print-press failure records)
 
 **Project Overview**
