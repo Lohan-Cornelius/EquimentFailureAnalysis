@@ -98,7 +98,13 @@ We have 3 options :
   3. Average the Values
 
 Decision : 
-I will
+I will be keeping the higher value.
+
+Reasoning: 
+Downtime is more often under-reported than over-reported in the moment, a technician may log an initial, optimistic estimate while the press is still down, then
+the actual figure comes in higher once the machine is fully back in service. Keeping the higher value is the more conservative (and more operationally realistic)
+choice, since underestimating downtime risks masking the true cost and urgency of a failure. The lower duplicate in each pair is treated as the earlier/less
+accurate reading.
 
 
 
