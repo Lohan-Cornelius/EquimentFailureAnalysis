@@ -9,7 +9,7 @@
 
 ### **Walkthrough**
 
-1.  Created a database and a RAW staging Table.
+### 1.  Created a database and a RAW staging Table.
  -  Note : Every column is a text/VARCHAR at this stage on purpose, casting to proper numeric/date types in Step 2 to avoid import silently failing.
  -  Code : 
 
