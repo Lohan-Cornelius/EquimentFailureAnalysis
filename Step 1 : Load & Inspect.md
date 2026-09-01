@@ -106,9 +106,9 @@ FROM
 <img width="1457" height="122" alt="RS35" src="https://github.com/user-attachments/assets/1c73832f-abcb-4845-9d55-a7031720a802" />
 
 
-Additional Findings :
-	* Date format mismatch.
-	* Negative values in downtime_hours and estimates_cost_zar.
+Additional Findings from visual sighting:
+	1. Date format mismatch.
+	2. Negative values in downtime_hours and estimates_cost_zar.
 
 
 	
