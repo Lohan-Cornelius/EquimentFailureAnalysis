@@ -29,3 +29,5 @@ HAVING COUNT(*) > 1
 ORDER BY copies DESC;
 ```
 <img width="705" height="540" alt="RS45" src="https://github.com/user-attachments/assets/301d49cb-7439-4897-8947-306399426d2d" />
+
+Result is accurate as there are 22 rows that are duplicates and the result of the query has 22 rows all with 2 'copies' meaning that there is 1 extra of each.
