@@ -4,12 +4,12 @@
 
 ## Get the raw CSV into MySQL untouched, and establish a baseline understanding of its size and quality issues before touching any cleaning logic.
 
-### **What I did**
+## **What I did**
 1.  Created a database and a raw staging table.
 2.  Loaded the CSV using MySQL's bulk import.
 3.  Ran baseline checks (row count, duplicate IDs, distinct values in messy columns).
 
-### **Walkthrough**
+## **Walkthrough**
 
 ### 1.  Created a database and a RAW staging Table.
  -  Note : Every column is a text/VARCHAR at this stage on purpose, casting to proper numeric/date types in Step 2 to avoid import silently failing.
