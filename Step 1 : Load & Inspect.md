@@ -82,3 +82,31 @@ ORDER BY
 
 Finding : Clear data mismatch, multiple entries of the same part with different spelling and errors.
 		  To normalize this data.
+		  32 Distinct spelling for what should be 10 unique parts in total.
+
+```sql
+/*Checking NULL values in all Columns*/
+SELECT 
+	SUM(record_id = '') AS record_id_NULLS,
+    SUM(machine_id = '') AS machine_id_NULLS,
+	SUM(part_affected = '') AS part_affected_NULLS ,
+    SUM(failure_type = '') AS failure_type_NULLS,
+    SUM(date_reported = '') AS date_reported_NULLS,
+    SUM(downtime_hours = '') AS downtime_hours_NULLS,
+    SUM(estimated_cost_zar = '') AS estimated_cost_zar_NULLS,
+    SUM(technician = '') AS technician_NULLS,
+    SUM(root_cause = '') AS root_cause_NULLS,
+    SUM(resolved = '') AS resolved_NULLS
+FROM 
+	equipment_failures_raw 
+;
+```
+<img width="1457" height="122" alt="RS35" src="https://github.com/user-attachments/assets/1c73832f-abcb-4845-9d55-a7031720a802" />
+
+
+Additional Findings :
+	* Date format mismatch.
+	* Negative values in downtime_hours and estimates_cost_zar.
+
+
+	
