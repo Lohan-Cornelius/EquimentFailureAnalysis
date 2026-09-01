@@ -104,11 +104,32 @@ FROM
 ;
 ```
 <img width="1457" height="122" alt="RS35" src="https://github.com/user-attachments/assets/1c73832f-abcb-4845-9d55-a7031720a802" />
+Findings : Checking Null values count across all columns.
+		   To fix this in step 2.
 
+```sql
+/*Checking date column for mismatches*/
+SELECT 
+	DISTINCT(date_reported)
+FROM 
+	equipment_failures_raw 
+;
+```
+<img width="650" height="237" alt="RS36" src="https://github.com/user-attachments/assets/cec715e5-8358-4b27-8b6c-571b17103567" />
+Findings : Clear Date Format Mismatch.
+		   To fix in Step 2.
 
-Additional Findings from visual sighting:
-	1. Date format mismatch.
-	2. Negative values in downtime_hours and estimates_cost_zar.
-
+```sql
+/*Checking for negative values across downtime and cost columns*/
+SELECT 
+	SUM(downtime_hours < 0) AS negative_downtime,
+    SUM(estimated_cost_zar < 0) AS negative_cost
+FROM 
+	equipment_failures_raw 
+;
+```
+<img width="695" height="95" alt="RS43" src="https://github.com/user-attachments/assets/f84c0f91-7211-4445-8a1d-52a992d35fb4" />
+Findings : Clear indication of data captured incorrectly, impossible to have negative downtime with this data.
+		   To fix in Step 2.
 
 	
