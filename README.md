@@ -26,6 +26,20 @@ Goal :
 Get the raw CSV into MySQL untouched, and establish a baseline understanding of its size and quality issues before touching any cleaning logic.
 
 What I did
-1.  Created a database and a raw staging table.
-2.  Loaded the CSV using MySQL's bulk import.
-3.  Ran baseline checks (row count, duplicate IDs, distinct values in messy columns).
+  1.  Created a database and a raw staging table.
+  2.  Loaded the CSV using MySQL's bulk import.
+  3.  Ran baseline checks (row count, duplicate IDs, distinct values in messy columns).
+
+### **Step 2: Clean with SQL**
+
+Goal:
+Turn the messy raw table (equipment_failures_raw) into a clean, analysis-ready table — without ever overwriting the raw data, so the before/after transformation
+is always visible in the portfolio.
+
+What I did
+  1. De-duplicated records, keeping the most complete row per duplicate group.
+  2. Standardized resolved into a clean boolean/enum.
+  3. Normalized part_affected spellings to a lookup table of real part names.
+  4. Parsed date_reported from mixed formats into a single DATE type.
+  5. Corrected/flagged negative downtime_hours and estimated_cost_zar values.
+  6. Converted blank fields to proper NULLs and decided how to handle each.
