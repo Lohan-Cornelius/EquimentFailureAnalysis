@@ -16,6 +16,8 @@ The goal is to take this raw, messy log all the way through to a working root-ca
 5.  Write it up - Summarize the findings and recommendations in plain language, as if explaining them to a non-technical stakeholder rather than a room of             analysts.
 6.  Publish - Push the SQL scripts and this README to GitHub, and share the dashboard and write-up as a portfolio piece.
 
+
+
 **Step 1: Load and Inspect**
 
 Goal :
