@@ -58,13 +58,15 @@ ORDER BY record_id;
 
 Clear that Duplicate Rows are pure duplicates as the Value (True & False) query above has the same 1's & 0's across all duplicate rows. Would not matter which duplicate you delete, the data will not lose integrity.
 
+
+Created New Table with Distinct Rows from the first table.
 ```sql
 CREATE TABLE equipment_failures_dedup AS
 SELECT DISTINCT *
 FROM equipment_failures_raw;
 ```
 
-Created New Table with Distinct Rows from the first table.
+
 ```sql
 SELECT COUNT(*) AS total_rows
 FROM equipment_failures_dedup;
