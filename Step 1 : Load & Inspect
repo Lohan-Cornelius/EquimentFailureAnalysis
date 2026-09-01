@@ -5,3 +5,9 @@ What I did
 2.  Loaded the CSV using MySQL's bulk import.
 3.  Ran baseline checks (row count, duplicate IDs, distinct values in messy columns).
 
+Walkthrough
+
+1.  Created a database and a RAW staging Table.
+ -  Note : Every column is a text/VARCHAR at this stage on purpose, casting to proper numeric/date types in Step 2 to avoid import silently failing.
+ -  Code : 
+    
