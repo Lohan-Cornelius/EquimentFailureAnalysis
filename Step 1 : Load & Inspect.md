@@ -40,7 +40,7 @@ CREATE TABLE equipment_failures_raw (
    
 
 ### 3. Ran baseline checks (Row Count, Duplicate ID's, distinct values in Messy Columns.
-### Evaluate Duplicate Entries
+	### Evaluate Duplicate Entries
 ```sql
 /*To evaluate if there are any duplicate entries*/
 SELECT 
