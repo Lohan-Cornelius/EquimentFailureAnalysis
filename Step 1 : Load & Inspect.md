@@ -45,3 +45,5 @@ FROM
 ```
 <img width="612" height="155" alt="RS12" src="https://github.com/user-attachments/assets/b6e9231e-8e75-414e-901a-29e33f54b2d2" />
 
+Finding : Duplicate rows as there are more rows as unique record ID's.
+
