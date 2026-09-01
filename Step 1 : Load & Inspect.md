@@ -30,6 +30,7 @@ CREATE TABLE equipment_failures_raw (
 ```
 
 2. Loaded the CSV using MySQL's bulk Import Wizard
+   
    <img width="1190" height="762" alt="Failures RAW" src="https://github.com/user-attachments/assets/aa7ce4f0-6a80-45d2-8ecf-8a5ce0743256" />
 
  
