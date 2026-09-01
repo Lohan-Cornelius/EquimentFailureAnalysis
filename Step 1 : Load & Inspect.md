@@ -31,13 +31,11 @@ CREATE TABLE equipment_failures_raw (
 );
 ```
 
-<br />
 
 ### 2. Loaded the CSV using MySQL's bulk Import Wizard
    
    <img width="1190" height="762" alt="Failures RAW" src="https://github.com/user-attachments/assets/aa7ce4f0-6a80-45d2-8ecf-8a5ce0743256" />
    
-<br />
 
 ### 3. Ran baseline checks (Row Count, Duplicate ID's, distinct values in Messy Columns.
 ```sql
@@ -66,6 +64,6 @@ FROM
 <img width="612" height="167" alt="RS13" src="https://github.com/user-attachments/assets/4c29cf45-dc77-4aeb-9ce4-bc8c04e2e376" />
 
 Finding : There is a mismatch in the categorical values of whether or not a incident was resolved or not.
-		  To clean this clean this data to be simply yes or no.
+		  To clean this data to be simply yes or no.
 
 
