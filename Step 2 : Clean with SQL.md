@@ -89,6 +89,7 @@ ORDER BY record_id;
 ```
 <img width="1185" height="322" alt="RS60" src="https://github.com/user-attachments/assets/a7c7d253-823b-4454-967b-92b29721ea44" />
 
+
 Clear that the reason for the duplicates are due to a mismatch in the downtime_hours column.
 
 
@@ -128,6 +129,7 @@ SELECT COUNT(*) AS total_rows
 FROM equipment_failures_dedup;
 ```
 <img width="662" height="92" alt="RS58" src="https://github.com/user-attachments/assets/9b41712e-b3ad-4cd9-826e-bb8d80a9a3cc" />
+
 Clear that duplicates has been removes, can move to step 2.
 
 
