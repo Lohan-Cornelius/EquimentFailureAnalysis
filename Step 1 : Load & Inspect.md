@@ -65,6 +65,7 @@ FROM
 
 Finding : There is a mismatch in the categorical values of whether or not a incident was resolved or not.
 		  To clean this data to be simply yes or no.
+		  6 variants for what should be a 2 value field.
 
 
 ```sql
