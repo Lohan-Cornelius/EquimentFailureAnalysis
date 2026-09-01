@@ -88,7 +88,7 @@ Finding : Clear data mismatch, multiple entries of the same part with different 
 		  To normalize this data.
 		  32 Distinct spelling for what should be 10 unique parts in total.
 
-   ### Checking NULL Values Across Table
+   ### Checking Blank/Missing Values Across Table
 ```sql
 /*Checking NULL values in all Columns*/
 SELECT 
