@@ -107,6 +107,7 @@ FROM
 ;
 ```
 <img width="1457" height="122" alt="RS35" src="https://github.com/user-attachments/assets/1c73832f-abcb-4845-9d55-a7031720a802" />
+
 Findings : Checking Null values count across all columns.
 		   To fix this in step 2.
 
@@ -120,6 +121,7 @@ FROM
 ;
 ```
 <img width="650" height="237" alt="RS36" src="https://github.com/user-attachments/assets/cec715e5-8358-4b27-8b6c-571b17103567" />
+
 Findings : Clear Date Format Mismatch.
 		   To fix in Step 2.
 
