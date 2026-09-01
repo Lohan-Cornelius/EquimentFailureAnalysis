@@ -33,4 +33,29 @@ CREATE TABLE equipment_failures_raw (
    
    <img width="1190" height="762" alt="Failures RAW" src="https://github.com/user-attachments/assets/aa7ce4f0-6a80-45d2-8ecf-8a5ce0743256" />
 
- 
+3. Ran baseline checks (Row Count, Duplicate ID's, distinct values in Messy Columns.
+```sql
+/*To evaluate if there are any duplicate entries*/
+SELECT 
+	COUNT(*)AS Total_rows,
+    COUNT(DISTINCT (record_id)) AS Unique_Incidents
+FROM
+	equipment_failures_raw
+;
+
+/*Selecting distinct Resolved values*/
+SELECT
+	DISTINCT(resolved)
+FROM
+	equipment_failures_raw
+;
+
+/*Selecting all distinct parts affected*/
+SELECT
+	DISTINCT(part_affected)
+FROM 
+	equipment_failures_raw
+ORDER BY
+	1
+;
+```
