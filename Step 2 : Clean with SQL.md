@@ -7,7 +7,7 @@
 ## **What I did**
 
   1. De-duplicated records, keeping the most complete row per duplicate group.
-  2. Standardized resolved into a clean boolean/enum.
+  2. Standardized resolved into a clean boolean/num.
   3. Normalized part_affected spellings to a lookup table of real part names.
   4. Parsed date_reported from mixed formats into a single DATE type.
   5. Corrected/flagged negative downtime_hours and estimated_cost_zar values.
@@ -31,3 +31,8 @@ ORDER BY copies DESC;
 <img width="705" height="540" alt="RS45" src="https://github.com/user-attachments/assets/301d49cb-7439-4897-8947-306399426d2d" />
 
 Result is accurate as there are 22 rows that are duplicates and the result of the query has 22 rows all with 2 'copies' meaning that there is 1 extra of each.
+
+### 2. Standardized resolved into a clean boolean/num.
+```sql
+
+```
