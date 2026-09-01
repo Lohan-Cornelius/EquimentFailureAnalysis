@@ -1,0 +1,6 @@
+Goal : Get the raw CSV into MySQL untouched, and establish a baseline understanding of its size and quality issues before touching any cleaning logic.
+
+What I did
+Created a database and a raw staging table.
+Loaded the CSV using MySQL's bulk import.
+Ran baseline checks (row count, duplicate IDs, distinct values in messy columns).
