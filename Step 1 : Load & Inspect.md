@@ -140,4 +140,10 @@ FROM
 Findings : Clear indication of data captured incorrectly, impossible to have negative downtime with this data.
 		   To fix in Step 2.
 
-	
+## Decisions Made
+	1. 22 duplicate records need to be resolved in Step 2 (de-dupe on record_id + machine_id + date_reported, keeping the most complete row).
+	   resolved will be standardized to a true boolean (Y/Yes → TRUE, N/No → FALSE, blank → NULL).
+	2. part_affected will be cleaned via TRIM/LOWER and mapped to a lookup table of the ~10 real part names.
+	3. Blank values across part_affected, downtime_hours, estimated_cost_zar, technician, root_cause, and resolved will be handled explicitly (converted to NULL          and decided case-by-case whether to impute, exclude, or leave as missing for analysis).
+	4. date_reported will be parsed from mixed formats into a single standard DATE type.
+	5. The 14 negative rows in each of downtime_hours and estimated_cost_zar will be flagged and corrected (likely ABS() if they're a sign-flip data-entry error)         or excluded if unrecoverable.
