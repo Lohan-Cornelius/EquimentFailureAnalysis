@@ -42,20 +42,6 @@ SELECT
 FROM
 	equipment_failures_raw
 ;
-
-/*Selecting distinct Resolved values*/
-SELECT
-	DISTINCT(resolved)
-FROM
-	equipment_failures_raw
-;
-
-/*Selecting all distinct parts affected*/
-SELECT
-	DISTINCT(part_affected)
-FROM 
-	equipment_failures_raw
-ORDER BY
-	1
-;
 ```
+<img width="612" height="155" alt="RS12" src="https://github.com/user-attachments/assets/b6e9231e-8e75-414e-901a-29e33f54b2d2" />
+
