@@ -1,11 +1,13 @@
-# **Goal** : Get the raw CSV into MySQL untouched, and establish a baseline understanding of its size and quality issues before touching any cleaning logic.
+# **Goal** : 
 
-**What I did**
+## Get the raw CSV into MySQL untouched, and establish a baseline understanding of its size and quality issues before touching any cleaning logic.
+
+### **What I did**
 1.  Created a database and a raw staging table.
 2.  Loaded the CSV using MySQL's bulk import.
 3.  Ran baseline checks (row count, duplicate IDs, distinct values in messy columns).
 
-**Walkthrough**
+### **Walkthrough**
 
 1.  Created a database and a RAW staging Table.
  -  Note : Every column is a text/VARCHAR at this stage on purpose, casting to proper numeric/date types in Step 2 to avoid import silently failing.
@@ -29,11 +31,11 @@ CREATE TABLE equipment_failures_raw (
 );
 ```
 
-2. Loaded the CSV using MySQL's bulk Import Wizard
+### 2. Loaded the CSV using MySQL's bulk Import Wizard
    
    <img width="1190" height="762" alt="Failures RAW" src="https://github.com/user-attachments/assets/aa7ce4f0-6a80-45d2-8ecf-8a5ce0743256" />
 
-3. Ran baseline checks (Row Count, Duplicate ID's, distinct values in Messy Columns.
+### 3. Ran baseline checks (Row Count, Duplicate ID's, distinct values in Messy Columns.
 ```sql
 /*To evaluate if there are any duplicate entries*/
 SELECT 
