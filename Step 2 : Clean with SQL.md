@@ -180,14 +180,14 @@ If my UPDATE logic was correct, this query would return zero rows, an empty resu
 
 ### Dropping resolved column and renaming resolved_clean
 
-Dropping Table
+Dropping Column
 
 ```sql
 ALTER TABLE equipment_failures_dedup
 DROP COLUMN resolved;
 ```
 
-Renaming Table
+Renaming Column
 
 ```sql
 ALTER TABLE equipment_failures_dedup
