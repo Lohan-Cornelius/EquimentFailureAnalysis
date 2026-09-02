@@ -352,3 +352,38 @@ CHANGE COLUMN date_reported_clean date_reported DATE
 AFTER part_affected;
 ```
 <img width="1211" height="497" alt="image" src="https://github.com/user-attachments/assets/54eae8bb-d922-4e62-84a2-4cf1cbdb18cb" />
+
+## Corrected negative downtime_hours and estimated_cost_zar values. 6.Converted blank fields to proper NULLs and decided how to handle each.
+```sql
+-- Convert blank ('') values to true NULLs so the columns can be
+-- safely converted to a numeric type in the next step
+UPDATE equipment_failures_dedup
+SET downtime_hours = NULL
+WHERE TRIM(downtime_hours) = '';
+
+UPDATE equipment_failures_dedup
+SET estimated_cost_zar = NULL
+WHERE TRIM(estimated_cost_zar) = '';
+```
+Converted Blank values to proper NULLs.
+
+```sql
+-- Convert downtime_hours and estimated_cost_zar from text to proper decimal numbers
+ALTER TABLE equipment_failures_dedup
+MODIFY COLUMN downtime_hours DECIMAL(10,2),
+MODIFY COLUMN estimated_cost_zar DECIMAL(10,2);
+```
+Converted downtime_hours and estimated_cost_zar from text to proper decimal numbers.
+<img width="1187" height="495" alt="image" src="https://github.com/user-attachments/assets/06f35d5d-d6d2-4e0f-993b-dbee098b7050" />
+
+```sql
+-- Correct negative downtime_hours and estimated_cost_zar values by flipping
+-- their sign, treating the negative as a data-entry sign error
+UPDATE equipment_failures_dedup
+SET downtime_hours = ABS(downtime_hours),
+    estimated_cost_zar = ABS(estimated_cost_zar);
+```
+<img width="1186" height="490" alt="image" src="https://github.com/user-attachments/assets/58ad6351-1cd3-4693-83cd-0da22ed2ca81" />
+
+
+Correcting negative downtime_hours and estimated_cost_zar values flipping from - to +, treating as a data-entry error.
