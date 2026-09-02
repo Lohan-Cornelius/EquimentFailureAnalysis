@@ -145,7 +145,7 @@ ADD COLUMN resolved_clean BOOLEAN;
 
 Added Column for Boolean interpretation of whether the incident was resolved or not.
 
-###Assigning True or False dependant on the value in the resolved column, NULL if no value entired.
+### Assigning True or False dependant on the value in the resolved column, NULL if no value entired.
 ```sql
 UPDATE equipment_failures_dedup
 SET resolved_clean = CASE
