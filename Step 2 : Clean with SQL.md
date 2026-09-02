@@ -158,6 +158,23 @@ END;
 
 Updated new column to accurately portray whether is was resolved or not.
 
+### Checking to see if assignment in resolved_clean is correct
 
+```sql
+SELECT
+    resolved,
+    resolved_clean,
+    COUNT(*) AS row_count
+FROM equipment_failures_dedup
+WHERE
+    (resolved IN ('Yes', 'yes', 'Y') AND resolved_clean <> TRUE)
+    OR (resolved IN ('No', 'N') AND resolved_clean <> FALSE)
+    OR (resolved = '' AND resolved_clean IS NOT NULL)
+GROUP BY resolved, resolved_clean;
+```
+<img width="662" height="267" alt="RS69" src="https://github.com/user-attachments/assets/77eac70c-32e9-4323-9949-06f73469f39c" />
 
+Can Clearly see that there are no assignments that are incorrect as I ran a check with the above query.
+What this does: it defines "what should have happened" for each case, and only returns rows where the actual resolved_clean value doesn't match what was expected.
+If my UPDATE logic was correct, this query would return zero rows, an empty result is actually the good outcome here, since it means no mismatches were found.
 
