@@ -193,3 +193,25 @@ Renaming Column
 ALTER TABLE equipment_failures_dedup
 CHANGE COLUMN resolved_clean resolved BOOLEAN;
 ```
+
+## Normalized part_affected spellings to a lookup table of real part names.
+
+### Selecting Distinct part_affected
+```sql
+SELECT DISTINCT part_affected
+FROM equipment_failures_dedup
+ORDER BY 1;
+```
+<img width="757" height="540" alt="RS71" src="https://github.com/user-attachments/assets/436ec1cf-5800-458f-aafb-408a0fa60eb7" />
+
+**Blanket Cylinder**	: BLANKET CYLINDER, Blanket cylinder , blanket cylinder
+**Dampening Roller** :	Damp. Roller, dampening roller
+**Delivery Chain** :	Delivery Chian, delivery chain
+**Doctor Blade** :	Dr. Blade, doctor blade
+**Feeder Unit** :	Feeder Unit, feeder unit
+**Gripper Bar** :	Gripper Bar, gripper bar
+**Impression** :	impression cyl.
+**Ink Roller** :	Ink Roller, Ink Rollr, ink roller
+**Plate Clamp** :	Plate Clamp , plate clamp
+**Registration Sensor** :	Reg. Sensor, registration sensor
+
