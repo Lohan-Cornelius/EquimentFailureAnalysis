@@ -214,4 +214,4 @@ ORDER BY 1;
 - **Ink Roller** :	Ink Roller, Ink Rollr, ink roller
 - **Plate Clamp** :	Plate Clamp , plate clamp
 - **Registration Sensor** :	Reg. Sensor, registration sensor
-
+- **Blank rows too**
