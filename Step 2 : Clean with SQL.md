@@ -272,3 +272,43 @@ INSERT INTO part_lookup (messy_value, clean_value) VALUES
 
 <img width="672" height="462" alt="image" src="https://github.com/user-attachments/assets/7553a5b1-c4cc-459f-bf44-7f4f5f096e63" />
 
+### Adding new column to equipment_failure_dedup
+```sql
+ALTER TABLE equipment_failures_dedup
+ADD COLUMN part_affected_clean VARCHAR(100);
+```
+
+### Filling new Column with data from Lookup Table
+```sql
+UPDATE equipment_failures_dedup e
+JOIN part_lookup p
+    ON TRIM(LOWER(e.part_affected)) = TRIM(LOWER(p.messy_value))
+SET e.part_affected_clean = p.clean_value;
+```
+<img width="1377" height="527" alt="image" src="https://github.com/user-attachments/assets/4e00cc06-ed81-4db9-94e1-08e86630a37a" />
+
+Blank rows are kept NULL
+
+### Verifying all allocation were correct without errors
+```sql
+SELECT part_affected, part_affected_clean, COUNT(*) AS row_count
+FROM equipment_failures_dedup
+GROUP BY part_affected, part_affected_clean
+ORDER BY part_affected;
+```
+<img width="812" height="512" alt="image" src="https://github.com/user-attachments/assets/c2db98b0-5484-4a5c-9b90-0902fcce5e71" />
+
+Visual check to see if the wrong original part_affected column is mapping to the correct cleaned part_affected column
+
+- All is correct.
+
+  ### Dropping original pat_affected column and replacing with part_affected_clean (Renamed to part_affedtec)
+```sql
+ALTER TABLE equipment_failures_dedup
+DROP COLUMN part_affected;
+
+ALTER TABLE equipment_failures_dedup
+CHANGE COLUMN part_affected_clean part_affected VARCHAR(100);
+```
+<img width="1227" height="532" alt="image" src="https://github.com/user-attachments/assets/b95dd0db-2b7f-4796-befe-350a2496776a" />
+
