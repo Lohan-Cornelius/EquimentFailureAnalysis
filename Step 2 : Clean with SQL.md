@@ -310,5 +310,6 @@ DROP COLUMN part_affected;
 ALTER TABLE equipment_failures_dedup
 CHANGE COLUMN part_affected_clean part_affected VARCHAR(100);
 ```
-<img width="1227" height="532" alt="image" src="https://github.com/user-attachments/assets/b95dd0db-2b7f-4796-befe-350a2496776a" />
+<img width="1262" height="615" alt="image" src="https://github.com/user-attachments/assets/3f7fe5cf-45f3-422b-a91c-fa245b86750b" />
+
 
