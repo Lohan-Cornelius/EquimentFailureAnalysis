@@ -312,4 +312,43 @@ CHANGE COLUMN part_affected_clean part_affected VARCHAR(100);
 ```
 <img width="1262" height="615" alt="image" src="https://github.com/user-attachments/assets/3f7fe5cf-45f3-422b-a91c-fa245b86750b" />
 
+## 4. Parsed date_reported from mixed formats into a single DATE type.
 
+### Adding new column to hold parsed date data
+```sql
+ALTER TABLE equipment_failures_dedup
+ADD COLUMN date_reported_clean DATE;
+```
+
+### Cleaning date_reported into the date_reported_clean
+```sql
+UPDATE equipment_failures_dedup
+SET date_reported_clean = CASE
+    WHEN date_reported REGEXP '^[0-9]{4}-[0-9]{2}-[0-9]{2}$'
+        THEN STR_TO_DATE(date_reported, '%Y-%m-%d')
+    WHEN date_reported REGEXP '^[0-9]{2}/[0-9]{2}/[0-9]{4}$'
+        THEN STR_TO_DATE(date_reported, '%d/%m/%Y')
+    WHEN date_reported REGEXP '^[0-9]{2}-[A-Za-z]{3}-[0-9]{4}$'
+        THEN STR_TO_DATE(date_reported, '%d-%b-%Y')
+    ELSE NULL
+END;
+```
+<img width="1312" height="512" alt="image" src="https://github.com/user-attachments/assets/d9af656f-b327-4a7f-955b-25f756a50bcf" />
+
+Verify 
+```sql
+SELECT date_reported, date_reported_clean
+FROM equipment_failures_dedup
+WHERE date_reported_clean IS NULL;
+```
+
+### Correct Table
+```sql
+ALTER TABLE equipment_failures_dedup
+DROP COLUMN date_reported;
+
+ALTER TABLE equipment_failures_dedup
+CHANGE COLUMN date_reported_clean date_reported DATE
+AFTER part_affected;
+```
+<img width="1211" height="497" alt="image" src="https://github.com/user-attachments/assets/54eae8bb-d922-4e62-84a2-4cf1cbdb18cb" />
