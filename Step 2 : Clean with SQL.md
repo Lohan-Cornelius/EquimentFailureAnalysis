@@ -178,3 +178,18 @@ Can Clearly see that there are no assignments that are incorrect as I ran a chec
 What this does: it defines "what should have happened" for each case, and only returns rows where the actual resolved_clean value doesn't match what was expected.
 If my UPDATE logic was correct, this query would return zero rows, an empty result is actually the good outcome here, since it means no mismatches were found.
 
+### Dropping resolved column and renaming resolved_clean
+
+Dropping Table
+
+```sql
+ALTER TABLE equipment_failures_dedup
+DROP COLUMN resolved;
+```
+
+Renaming Table
+
+```sql
+ALTER TABLE equipment_failures_dedup
+CHANGE COLUMN resolved_clean resolved BOOLEAN;
+```
