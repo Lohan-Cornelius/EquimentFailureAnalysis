@@ -215,3 +215,60 @@ ORDER BY 1;
 - **Plate Clamp** :	Plate Clamp , plate clamp
 - **Registration Sensor** :	Reg. Sensor, registration sensor
 - **Blank rows too**
+
+### Creating the Lookup Table
+```sql
+CREATE TABLE part_lookup (
+    messy_value VARCHAR(100),
+    clean_value VARCHAR(100)
+);
+```
+<img width="612" height="107" alt="image" src="https://github.com/user-attachments/assets/ca7b9b11-94be-40ef-93a2-5195c587ce47" />
+
+### Inserting data into Lookup table
+```sql
+INSERT INTO part_lookup (messy_value, clean_value) VALUES
+('BLANKET CYLINDER',      'Blanket Cylinder'),
+('Blanket Cylinder',      'Blanket Cylinder'),
+('Blanket cylinder ',     'Blanket Cylinder'),
+('blanket cylinder',      'Blanket Cylinder'),
+
+('Damp. Roller',          'Dampening Roller'),
+('Dampening Roller',      'Dampening Roller'),
+('dampening roller',      'Dampening Roller'),
+
+('Delivery Chain',        'Delivery Chain'),
+('Delivery Chian',        'Delivery Chain'),
+('delivery chain',        'Delivery Chain'),
+
+('Doctor Blade',          'Doctor Blade'),
+('Dr. Blade',             'Doctor Blade'),
+('doctor blade',          'Doctor Blade'),
+
+('Feeder  Unit',          'Feeder Unit'),
+('Feeder Unit',           'Feeder Unit'),
+('feeder unit',           'Feeder Unit'),
+
+('Gripper  Bar',          'Gripper Bar'),
+('Gripper Bar',           'Gripper Bar'),
+('gripper bar',           'Gripper Bar'),
+
+('Impression Cylinder',   'Impression Cylinder'),
+('impression cyl.',       'Impression Cylinder'),
+
+('Ink  Roller',           'Ink Roller'),
+('Ink Roller',            'Ink Roller'),
+('Ink Rollr',             'Ink Roller'),
+('ink roller',            'Ink Roller'),
+
+('Plate Clamp',           'Plate Clamp'),
+('Plate Clamp ',          'Plate Clamp'),
+('plate clamp',           'Plate Clamp'),
+
+('Reg. Sensor',           'Registration Sensor'),
+('Registration Sensor',   'Registration Sensor'),
+('registration sensor',   'Registration Sensor');
+```
+
+<img width="672" height="462" alt="image" src="https://github.com/user-attachments/assets/7553a5b1-c4cc-459f-bf44-7f4f5f096e63" />
+
